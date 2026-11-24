@@ -126,3 +126,18 @@
     color: var(--heading-color);
 }
 
+/* PDF-specific layout */
+@media print {
+    .md-typeset .grid,
+    .md-typeset .grid.cards,
+    .md-typeset .grid.cards > ul {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .md-typeset .grid.cards > ul > li {
+        break-inside: avoid;
+        margin-bottom: 0.8rem;
+    }
+}
