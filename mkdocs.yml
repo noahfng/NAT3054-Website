@@ -1,0 +1,13 @@
+ site_name: "This is my website"
+  
+ theme:
+   name: material
+   #favicon: figures/favicon.png
+   #logo: figures/logo.png
+  
+ nav:
+   - "Home": "index.md"
+   - "Welcome": "src/welcome.md"
+   - "Sections":
+      - "Section 1": "src/section_1.md"
+      - "Section 2": "src/section_2.md"
