@@ -265,6 +265,26 @@
   
 
       
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../physics/lhc/" class="md-tabs__link">
+          
+  
+  
+  Particle Physics
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -514,6 +534,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#basic-vs-extended-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic vs. Extended Regular Expressions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic vs. Extended Regular Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repetition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repetition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grouping-and-alternation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping and alternation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-regex-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive regex playground
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -538,6 +608,93 @@
     
   
     Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Particle Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Particle Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physics/lhc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Hadron Collider
   
 
     
@@ -611,6 +768,56 @@
     <span class="md-ellipsis">
       
         Numerical input validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-vs-extended-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic vs. Extended Regular Expressions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic vs. Extended Regular Expressions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#repetition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repetition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grouping-and-alternation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping and alternation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-regex-playground" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive regex playground
       
     </span>
   </a>
@@ -725,6 +932,208 @@ numbers with an optional exponent:</p>
 </ul>
 <p>This allows numerical input to be checked before further
 processing or analysis.</p>
+<h2 id="basic-vs-extended-regular-expressions">Basic vs. Extended Regular Expressions</h2>
+<p>The <code>grep</code> command supports two regular expression syntaxes:
+Basic Regular Expressions (BRE) and Extended Regular
+Expressions (ERE).</p>
+<p>By default, <code>grep</code> uses BRE, whereas <code>grep -E</code> uses ERE.
+They differ mainly in the interpretation of certain
+metacharacters.</p>
+<h3 id="repetition">Repetition</h3>
+<p>Match strings consisting of exactly three digits.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">BRE</label><label for="__tabbed_1_2">ERE</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="pdf-only" markdown="1">
+<p><strong>Basic Regular Expressions (BRE)</strong></p>
+</div>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s1">'^[0-9]\{3\}$'</span><span class="w"> </span>file.txt
+</code></pre></div>
+<p>In BRE, the curly brackets must be escaped using
+backslashes to indicate repetition.</p>
+</div>
+<div class="tabbed-block">
+<div class="pdf-only" markdown="1">
+<p><strong>Extended Regular Expressions (ERE)</strong></p>
+</div>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^[0-9]{3}$'</span><span class="w"> </span>file.txt
+</code></pre></div>
+<p>In ERE, curly brackets are interpreted directly
+as repetition operators.</p>
+</div>
+</div>
+</div>
+<p><strong>Syntax breakdown:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>Beginning of the line</td>
+</tr>
+<tr>
+<td><code>[0-9]</code></td>
+<td>Any digit between 0 and 9</td>
+</tr>
+<tr>
+<td><code>{3}</code></td>
+<td>Exactly three occurrences</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>End of the line</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Syntax breakdown:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>Beginning of the line</td>
+</tr>
+<tr>
+<td><code>[0-9]</code></td>
+<td>Any digit between 0 and 9</td>
+</tr>
+<tr>
+<td><code>{3}</code></td>
+<td>Exactly three occurrences</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>End of the line</td>
+</tr>
+</tbody>
+</table>
+<h3 id="grouping-and-alternation">Grouping and alternation</h3>
+<p>Match strings consisting of either <code>abc</code> or <code>def</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">BRE</label><label for="__tabbed_2_2">ERE</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="pdf-only" markdown="1">
+<p><strong>Basic Regular Expressions (BRE)</strong></p>
+</div>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s1">'^\(abc\|def\)$'</span><span class="w"> </span>file.txt
+</code></pre></div>
+<p>Grouping and alternation are expressed using
+escaped parentheses and an escaped vertical bar.</p>
+</div>
+<div class="tabbed-block">
+<div class="pdf-only" markdown="1">
+<p><strong>Extended Regular Expressions (ERE)</strong></p>
+</div>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^(abc|def)$'</span><span class="w"> </span>file.txt
+</code></pre></div>
+<p>Parentheses and the vertical bar are interpreted
+directly as grouping and alternation operators.</p>
+</div>
+</div>
+</div>
+<p><strong>Syntax breakdown:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>^</code></td>
+<td>Beginning of the line</td>
+</tr>
+<tr>
+<td><code>( ... )</code></td>
+<td>Groups multiple expressions</td>
+</tr>
+<tr>
+<td><code>abc</code></td>
+<td>First possible match</td>
+</tr>
+<tr>
+<td><code>\|</code></td>
+<td>Logical OR (alternation)</td>
+</tr>
+<tr>
+<td><code>def</code></td>
+<td>Second possible match</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>End of the line</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Compatibility</p>
+<p>Alternation in BRE using <code>\|</code> is an extension to
+the POSIX standard. Its availability depends on
+the grep implementation.</p>
+</div>
+<h2 id="interactive-regex-playground">Interactive regex playground</h2>
+<p>Construct your own regular expressions and test them
+against the examples below.</p>
+<div id="regex-playground" class="web-only">
+
+    <label for="regex-preset">Challenge</label>
+
+    <select id="regex-preset">
+        <option value="wordle">Wordle challenge</option>
+        <option value="integer">Integer validation</option>
+        <option value="float">Floating-point numbers</option>
+        <option value="custom">Custom expression</option>
+    </select>
+
+    <div id="regex-task"></div>
+
+    <label for="regex-pattern">Regular expression</label>
+
+    <input id="regex-pattern"
+           type="text"
+           placeholder="Enter your regular expression..."
+           spellcheck="false"
+           autocomplete="off">
+
+    <label class="regex-switch-row">
+        <span>Ignore case</span>
+        <input id="regex-ignore-case"
+               type="checkbox"
+               class="regex-switch">
+    </label>
+
+    <label for="regex-input">Test strings</label>
+
+    <textarea id="regex-input"
+              rows="7"
+              spellcheck="false"></textarea>
+
+    <div id="regex-summary" aria-live="polite"></div>
+    <div id="regex-results"></div>
+
+</div>
+
+<div class="pdf-only">
+<p>The interactive regex playground is available in the
+<a href="https://noahfng.github.io/NAT3054-Website/src/section_1/#interactive-regex-playground">online documentation</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Regular expression engine</p>
+<p>This playground uses JavaScript regular expressions.
+Its syntax and behaviour may differ from POSIX BRE
+and ERE as implemented by grep.</p>
+</div>
 
 
 
@@ -742,6 +1151,8 @@ processing or analysis.</p>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
@@ -820,7 +1231,7 @@ processing or analysis.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "navigation.tracking", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "navigation.tracking", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight", "toc.follow", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
@@ -832,6 +1243,8 @@ processing or analysis.</p>
         <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
       
         <script src="../../javascripts/mermaid.js"></script>
+      
+        <script src="../../javascripts/regex.js"></script>
       
     
   </body>
