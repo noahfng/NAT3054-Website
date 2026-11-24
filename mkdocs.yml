@@ -48,6 +48,8 @@ plugins:
       output_path: pdf/NAT3054.pdf
       cover: true
       cover_title: "NAT3054 Documentation"
+      cover_subtitle: "Advanced Programming Tools in High-Energy Physics"
+      copyright: "Technical University of Munich | WS 2026/27"
       render_js: true
       headless_chrome_path: "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
       enabled_if_env: ENABLE_PDF_EXPORT
