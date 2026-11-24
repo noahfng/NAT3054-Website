@@ -1,13 +1,86 @@
- site_name: "This is my website"
-  
- theme:
-   name: material
-   #favicon: figures/favicon.png
-   #logo: figures/logo.png
-  
- nav:
-   - "Home": "index.md"
-   - "Welcome": "src/welcome.md"
-   - "Sections":
-      - "Section 1": "src/section_1.md"
-      - "Section 2": "src/section_2.md"
+site_name: "Programming Tools in HEP"
+site_description: "Documentation for NAT3054 at TUM"
+site_author: "Noah Fingerle"
+
+theme:
+  name: material
+
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  icon:
+    logo: material/atom
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - toc.follow
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - to-pdf:
+      output_path: pdf/NAT3054.pdf
+      cover: true
+      cover_title: "NAT3054 Documentation"
+      render_js: true
+      headless_chrome_path: "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+      enabled_if_env: ENABLE_PDF_EXPORT
+      theme_handler_path: pdf_theme.py
+
+nav:
+  - Home: index.md
+  - Introduction: src/welcome.md
+  - Programming Tools:
+      - Regular Expressions: src/section_1.md
+      - Git: src/section_2.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+
+  - pymdownx.arithmatex:
+      generic: true
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid.js

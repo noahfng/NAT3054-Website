@@ -1,0 +1,128 @@
+/* Typography */
+
+.md-typeset {
+    font-size: 0.8rem;
+    line-height: 1.75;
+}
+
+.md-typeset h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--md-default-fg-color);
+}
+
+.md-typeset h2 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-top: 2em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset h3 {
+    font-weight: 600;
+}
+
+/* Page layout */
+
+.md-grid {
+    max-width: 1440px;
+}
+
+.md-content__inner {
+    padding-bottom: 2rem;
+}
+
+/* Code blocks */
+
+.md-typeset pre {
+    border-radius: 10px;
+}
+
+.md-typeset pre > code {
+    padding: 1.1em;
+}
+
+.md-typeset code {
+    border-radius: 4px;
+}
+
+/* Tables */
+
+.md-typeset table:not([class]) {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+    background: var(--md-code-bg-color);
+    font-weight: 600;
+}
+
+/* Diagrams */
+
+.md-typeset .mermaid {
+    text-align: center;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 12px;
+}
+
+/* Information cards */
+
+.md-typeset .grid.cards > ul > li {
+    border-radius: 12px;
+    padding: 1.2rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* Callouts */
+
+.md-typeset .admonition,
+.md-typeset details {
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+/* Mathematical expressions */
+
+.md-typeset mjx-container[display="true"] {
+    padding: 0.8rem 0;
+}
+
+/* Light mode */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #14283F;
+    --md-primary-bg-color: #FFFFFF;
+    --md-accent-fg-color: #94651C;
+    --md-typeset-a-color: #94651C;
+    --heading-color: #344D66;
+    --md-default-bg-color: #FFFFFF;
+    --md-default-fg-color: #252E38;
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #101C2C;
+    --md-primary-bg-color: #FFFFFF;
+    --md-accent-fg-color: #EBC078;
+    --md-typeset-a-color: #EBC078;
+    --heading-color: #B4C7DF;
+    --md-default-bg-color: #192332;
+    --md-default-fg-color: #E2E8F0;
+}
+
+/* Headings */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+    color: var(--heading-color);
+}
+
