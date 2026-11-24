@@ -1,16 +1,505 @@
-/* Remove interactive elements */
+/* =====================================================
+   NAT3054 — PDF Documentation
+   ===================================================== */
+
+
+/* 1. Design variables
+   ----------------------------------------------------- */
+
+$navy: #14283f;
+$heading: #344d66;
+$gold: #94651c;
+$text: #252e38;
+$muted: #64748b;
+$border: #dce3ea;
+$surface: #f4f6f8;
+
+$font-body: "Inter", "Helvetica Neue", sans-serif;
+$font-code: "JetBrains Mono", "Menlo", monospace;
+
+
+/* 2. Page geometry
+   ----------------------------------------------------- */
+
+@page {
+    size: A4;
+    margin: 23mm 21mm 23mm 21mm;
+
+    color: $muted;
+    font-family: $font-body;
+    font-size: 8pt;
+
+    @top-left {
+        content: "NAT3054";
+        color: $navy;
+        font-weight: 600;
+        border-bottom: 0.5pt solid $border;
+        padding-bottom: 2mm;
+        vertical-align: bottom;
+    }
+
+    @top-center {
+        content: none;
+    }
+
+    @top-right {
+        content: "Programming Tools in HEP";
+        color: $muted;
+        border-bottom: 0.5pt solid $border;
+        padding-bottom: 2mm;
+        vertical-align: bottom;
+    }
+
+    @bottom-left {
+        content: "Winter Semester 2026/27";
+        border-top: 0.5pt solid $border;
+        padding-top: 2mm;
+        vertical-align: top;
+    }
+
+    @bottom-center {
+        content: none;
+    }
+
+    @bottom-right {
+        content: counter(page);
+        color: $navy;
+        font-weight: 600;
+        border-top: 0.5pt solid $border;
+        padding-top: 2mm;
+        vertical-align: top;
+    }
+}
+
+
+/* Remove headers and footers from the cover */
+
+@page :first {
+
+    @top-left {
+        content: none;
+        border: none;
+    }
+
+    @top-center {
+        content: none;
+    }
+
+    @top-right {
+        content: none;
+        border: none;
+    }
+
+    @bottom-left {
+        content: none;
+        border: none;
+    }
+
+    @bottom-center {
+        content: none;
+    }
+
+    @bottom-right {
+        content: none;
+        border: none;
+    }
+}
+
+
+/* 3. Cover page
+   ----------------------------------------------------- */
+
+.nat-cover {
+    position: relative;
+    height: 240mm;
+    width: 100%;
+    font-family: $font-body;
+    color: $navy;
+    text-align: left;
+    box-sizing: border-box;
+    break-inside: avoid;
+}
+
+.nat-cover-institution {
+    position: absolute;
+    top: 8mm;
+    left: 0;
+    right: 0;
+}
+
+.nat-cover-rule {
+    width: 100%;
+    height: 2.5mm;
+    background: $navy;
+    margin-bottom: 9mm;
+}
+
+.nat-university {
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 1pt;
+    margin: 0;
+}
+
+.nat-department {
+    font-size: 10pt;
+    color: $muted;
+    margin-top: 2mm;
+}
+
+.nat-cover-main {
+    position: absolute;
+    top: 83mm;
+    left: 0;
+    right: 0;
+}
+
+.nat-course-code {
+    font-size: 15pt;
+    font-weight: 700;
+    color: $gold;
+    letter-spacing: 2pt;
+    margin-bottom: 5mm;
+}
+
+.nat-cover-title {
+    font-size: 30pt !important;
+    line-height: 1.18 !important;
+    font-weight: 700 !important;
+    color: $navy !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+.nat-cover-title::before {
+    content: none !important;
+}
+
+.nat-cover-accent {
+    width: 35mm;
+    height: 1mm;
+    background: $gold;
+    margin: 9mm 0 6mm;
+}
+
+.nat-cover-subtitle {
+    color: $muted;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.nat-cover-footer {
+    position: absolute;
+    bottom: 8mm;
+    left: 0;
+    right: 0;
+    border-top: 0.5pt solid $border;
+    padding-top: 7mm;
+}
+
+.nat-cover-author {
+    font-size: 13pt;
+    font-weight: 600;
+    color: $navy;
+    margin: 0;
+}
+
+.nat-cover-semester,
+.nat-cover-url {
+    font-size: 10pt;
+    color: $muted;
+    margin: 2mm 0;
+}
+
+.nat-cover-url a {
+    color: $gold;
+    text-decoration: none;
+}
+
+
+/* 4. Document typography
+   ----------------------------------------------------- */
+
+body {
+    font-family: $font-body;
+    color: $text;
+    background: white;
+    font-size: 10.5pt;
+    line-height: 1.55;
+}
+
+article {
+    font-family: $font-body;
+    font-size: 10.5pt !important;
+    line-height: 1.55 !important;
+    color: $text !important;
+}
+
+article p {
+    margin-top: 0;
+    margin-bottom: 3mm;
+    orphans: 3;
+    widows: 3;
+}
+
+article li {
+    margin-bottom: 1mm;
+}
+
+article a {
+    color: $gold !important;
+    text-decoration: none;
+}
+
+
+/* 5. Headings
+   ----------------------------------------------------- */
+
+article h1,
+article h2,
+article h3,
+article h4 {
+    font-family: $font-body;
+    font-weight: 600 !important;
+    break-after: avoid;
+    page-break-after: avoid;
+    color: $heading !important;
+}
+
+article h1 {
+    font-size: 22pt !important;
+    color: $navy !important;
+    border-bottom: 1.5pt solid $navy !important;
+    padding-bottom: 3mm !important;
+    margin-bottom: 6mm !important;
+}
+
+article h2 {
+    font-size: 15pt !important;
+    margin-top: 7mm !important;
+    margin-bottom: 3mm !important;
+    padding-bottom: 2mm !important;
+    border-bottom: 0.5pt solid $border !important;
+}
+
+article h3 {
+    font-size: 12pt !important;
+    margin-top: 5mm !important;
+    margin-bottom: 2mm !important;
+    border: none !important;
+}
+
+article h4 {
+    font-size: 11pt !important;
+}
+
+
+/* 6. Table of contents
+   ----------------------------------------------------- */
+
+#toc {
+    font-family: $font-body;
+    color: $text;
+}
+
+#toc h1,
+#toc h2 {
+    color: $navy !important;
+    border-bottom-color: $navy !important;
+}
+
+#toc a {
+    color: $text !important;
+    text-decoration: none;
+}
+
+#toc li {
+    font-size: 10.5pt;
+    line-height: 1.7;
+    margin-bottom: 1mm;
+}
+
+
+/* 7. Code and terminal commands
+   ----------------------------------------------------- */
+
+article code,
+article pre {
+    font-family: $font-code;
+}
+
+article code {
+    font-size: 9pt;
+    color: $navy;
+    background: $surface;
+    border-radius: 2pt;
+}
+
+article pre {
+    background: $surface !important;
+    border: 0.5pt solid $border;
+    border-left: 2pt solid $heading;
+    border-radius: 3pt;
+    padding: 3mm 4mm !important;
+    margin: 4mm 0 !important;
+    font-size: 8.5pt !important;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    break-inside: avoid;
+}
+
+article pre code {
+    background: transparent !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+}
+
+
+/* 8. Tables
+   ----------------------------------------------------- */
+
+article table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt !important;
+    margin: 4mm 0;
+}
+
+article table th {
+    background: $navy !important;
+    color: white !important;
+    font-weight: 600;
+    text-align: left;
+    padding: 2.5mm 3mm !important;
+}
+
+article table td {
+    padding: 2.5mm 3mm !important;
+    border-bottom: 0.5pt solid $border;
+    vertical-align: top;
+}
+
+article table tr:nth-child(even) td {
+    background: $surface;
+}
+
+article thead {
+    display: table-header-group;
+}
+
+article tr {
+    break-inside: avoid;
+}
+
+
+/* 9. Scientific figures
+   ----------------------------------------------------- */
+
+figure {
+    margin: 6mm auto;
+    text-align: center;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+figure img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 120mm;
+    object-fit: contain;
+}
+
+figcaption {
+    font-family: $font-body;
+    color: $muted !important;
+    font-size: 8.5pt !important;
+    line-height: 1.45;
+    font-style: normal !important;
+    text-align: center;
+    margin-top: 3mm;
+}
+
+
+/* 10. Mathematical expressions
+   ----------------------------------------------------- */
+
+mjx-container[display="true"] {
+    margin: 4mm 0 !important;
+    padding: 1mm 0 !important;
+    break-inside: avoid;
+}
+
+
+/* 11. Mermaid diagrams
+   ----------------------------------------------------- */
+
+.mermaid {
+    text-align: center;
+    margin: 5mm auto;
+    padding: 3mm;
+    border: 0.5pt solid $border;
+    border-radius: 3pt;
+    break-inside: avoid;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    max-height: 120mm;
+}
+
+
+/* 12. Admonitions
+   ----------------------------------------------------- */
+
+article .admonition,
+article details {
+    box-shadow: none !important;
+    border-radius: 3pt !important;
+    margin: 4mm 0;
+    break-inside: avoid;
+}
+
+article .admonition-title {
+    font-weight: 600;
+    font-size: 10pt;
+}
+
+
+/* 13. Information cards
+   ----------------------------------------------------- */
+
+.grid,
+.grid.cards,
+.grid.cards > ul {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.grid.cards > ul > li {
+    break-inside: avoid;
+    margin-bottom: 3mm;
+}
+
+
+/* 14. Media-specific content
+   ----------------------------------------------------- */
 
 .web-only {
     display: none !important;
 }
 
-/* Display PDF-specific content */
-
 .pdf-only {
     display: block !important;
 }
 
-/* Flatten content tabs */
+
+/* 15. Flatten interactive tabs
+   ----------------------------------------------------- */
 
 .tabbed-labels {
     display: none !important;
@@ -22,17 +511,15 @@
 
 .tabbed-content > .tabbed-block {
     display: block !important;
-    margin-bottom: 1em;
+    margin-bottom: 4mm;
 }
 
-/* Keep scientific figures together */
 
-figure {
-    break-inside: avoid;
-    page-break-inside: avoid;
-}
+/* 16. Remove website controls
+   ----------------------------------------------------- */
 
-figure img {
-    max-height: 150mm;
-    object-fit: contain;
+.md-clipboard,
+.md-code__nav,
+.headerlink {
+    display: none !important;
 }
