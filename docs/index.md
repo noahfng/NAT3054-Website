@@ -47,7 +47,7 @@ documentation for scientific computing in high-energy physics.
     A downloadable version of the complete documentation,
     including mathematical expressions and diagrams.
 
-    [Download PDF →](pdf/NAT3054.pdf)
+    [Download PDF](pdf/NAT3054.pdf?v=3)
 
 </div>
 
