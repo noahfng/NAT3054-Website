@@ -72,3 +72,175 @@ Examples of accepted input:
 
 This allows numerical input to be checked before further
 processing or analysis.
+
+## Basic vs. Extended Regular Expressions
+
+The `grep` command supports two regular expression syntaxes:
+Basic Regular Expressions (BRE) and Extended Regular
+Expressions (ERE).
+
+By default, `grep` uses BRE, whereas `grep -E` uses ERE.
+They differ mainly in the interpretation of certain
+metacharacters.
+
+### Repetition
+
+Match strings consisting of exactly three digits.
+
+=== "BRE"
+
+    <div class="pdf-only" markdown="1">
+
+    **Basic Regular Expressions (BRE)**
+
+    </div>
+
+    ```bash
+    grep '^[0-9]\{3\}$' file.txt
+    ```
+
+    In BRE, the curly brackets must be escaped using
+    backslashes to indicate repetition.
+
+=== "ERE"
+
+    <div class="pdf-only" markdown="1">
+
+    **Extended Regular Expressions (ERE)**
+
+    </div>
+
+    ```bash
+    grep -E '^[0-9]{3}$' file.txt
+    ```
+
+    In ERE, curly brackets are interpreted directly
+    as repetition operators.
+
+**Syntax breakdown:**
+
+| Expression | Meaning |
+| --- | --- |
+| `^` | Beginning of the line |
+| `[0-9]` | Any digit between 0 and 9 |
+| `{3}` | Exactly three occurrences |
+| `$` | End of the line |
+
+
+**Syntax breakdown:**
+
+| Expression | Meaning |
+| --- | --- |
+| `^` | Beginning of the line |
+| `[0-9]` | Any digit between 0 and 9 |
+| `{3}` | Exactly three occurrences |
+| `$` | End of the line |
+
+### Grouping and alternation
+
+Match strings consisting of either `abc` or `def`.
+
+=== "BRE"
+
+    <div class="pdf-only" markdown="1">
+
+    **Basic Regular Expressions (BRE)**
+
+    </div>
+
+    ```bash
+    grep '^\(abc\|def\)$' file.txt
+    ```
+
+    Grouping and alternation are expressed using
+    escaped parentheses and an escaped vertical bar.
+
+=== "ERE"
+
+    <div class="pdf-only" markdown="1">
+
+    **Extended Regular Expressions (ERE)**
+
+    </div>
+
+    ```bash
+    grep -E '^(abc|def)$' file.txt
+    ```
+
+    Parentheses and the vertical bar are interpreted
+    directly as grouping and alternation operators.
+
+**Syntax breakdown:**
+
+| Expression | Meaning |
+| --- | --- |
+| `^` | Beginning of the line |
+| `( ... )` | Groups multiple expressions |
+| `abc` | First possible match |
+| `\|` | Logical OR (alternation) |
+| `def` | Second possible match |
+| `$` | End of the line |
+
+!!! note "Compatibility"
+    Alternation in BRE using `\|` is an extension to
+    the POSIX standard. Its availability depends on
+    the grep implementation.
+
+
+
+
+## Interactive regex playground
+
+Construct your own regular expressions and test them
+against the examples below.
+
+<div id="regex-playground" class="web-only">
+
+    <label for="regex-preset">Challenge</label>
+
+    <select id="regex-preset">
+        <option value="wordle">Wordle challenge</option>
+        <option value="integer">Integer validation</option>
+        <option value="float">Floating-point numbers</option>
+        <option value="custom">Custom expression</option>
+    </select>
+
+    <div id="regex-task"></div>
+
+    <label for="regex-pattern">Regular expression</label>
+
+    <input id="regex-pattern"
+           type="text"
+           placeholder="Enter your regular expression..."
+           spellcheck="false"
+           autocomplete="off">
+
+    <label class="regex-switch-row">
+        <span>Ignore case</span>
+        <input id="regex-ignore-case"
+               type="checkbox"
+               class="regex-switch">
+    </label>
+
+    <label for="regex-input">Test strings</label>
+
+    <textarea id="regex-input"
+              rows="7"
+              spellcheck="false"></textarea>
+
+    <div id="regex-summary" aria-live="polite"></div>
+    <div id="regex-results"></div>
+
+</div>
+
+<div class="pdf-only" markdown="1">
+
+The interactive regex playground is available in the
+[online documentation](https://noahfng.github.io/NAT3054-Website/src/section_1/#interactive-regex-playground).
+
+</div>
+
+!!! note "Regular expression engine"
+    This playground uses JavaScript regular expressions.
+    Its syntax and behaviour may differ from POSIX BRE
+    and ERE as implemented by grep.

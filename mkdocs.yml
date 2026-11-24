@@ -39,6 +39,7 @@ theme:
     - search.suggest
     - search.highlight
     - toc.follow
+    - content.tabs.link
 extra_css:
   - stylesheets/extra.css
 
@@ -54,6 +55,7 @@ plugins:
       headless_chrome_path: "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
       enabled_if_env: ENABLE_PDF_EXPORT
       theme_handler_path: pdf_theme.py
+      custom_template_path: templates
 
 nav:
   - Home: index.md
@@ -61,6 +63,8 @@ nav:
   - Programming Tools:
       - Regular Expressions: src/section_1.md
       - Git: src/section_2.md
+  - Particle Physics:
+      - Large Hadron Collider: physics/lhc.md
 
 markdown_extensions:
   - admonition
@@ -70,6 +74,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.highlight
   - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
 
   - pymdownx.arithmatex:
       generic: true
@@ -86,3 +92,4 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
   - javascripts/mermaid.js
+  - javascripts/regex.js

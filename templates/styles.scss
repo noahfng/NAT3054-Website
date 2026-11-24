@@ -1,0 +1,38 @@
+/* Remove interactive elements */
+
+.web-only {
+    display: none !important;
+}
+
+/* Display PDF-specific content */
+
+.pdf-only {
+    display: block !important;
+}
+
+/* Flatten content tabs */
+
+.tabbed-labels {
+    display: none !important;
+}
+
+.tabbed-set > input {
+    display: none !important;
+}
+
+.tabbed-content > .tabbed-block {
+    display: block !important;
+    margin-bottom: 1em;
+}
+
+/* Keep scientific figures together */
+
+figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+figure img {
+    max-height: 150mm;
+    object-fit: contain;
+}
